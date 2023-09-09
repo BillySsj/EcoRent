@@ -19,57 +19,62 @@
     </div>
     <div class="productos">
         @foreach ($productos as $item)
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <span style="color: rgb(12, 255, 12); position:absolute">{{ $item->estado }}</span>
-                        <img src="/img/{{ $item->img }}" alt="">
-                        <h2>{{ $item->nombre }} <span style="color: green; font-size: 12px;">Q.{{ $item->precio }}</span>
-                        </h2>
-                    </div>
-                    <div class="flip-card-back">
-                        <h5 style="text-align: center; font-weight: 900">{{$item->nombre}}</h5>
-                    <p style="line-height: 18px">{{$item->descripcion}}</p>
-                    <p style="text-align: center; text-decoration: underline; ">{{$item->venta_arquiler}}</p>
-                    <p style="color: rgb(0, 255, 0)">{{$item->estado}}</p>
-                        @auth
-                             <a href="{{route('facturar', $item)}}"><button class="bt">Comprar <span>Q.{{$item->precio}}</span></button></a>
-                        @endauth
-                        @guest
-                            <h5 style="color: red">Para realizar la compra debe iniciar secion o registrarse</h5>
-                        @endguest
-                   
+            @if ($item->unidades>0)
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span style="color: rgb(12, 255, 12); position:absolute">{{ $item->estado }}</span>
+                            <img src="/img/{{ $item->img }}" alt="">
+                            <h2>{{ $item->nombre }} <span
+                                    style="color: green; font-size: 12px;">Q.{{ $item->precio }}</span>
+                            </h2>
+                        </div>
+                        <div class="flip-card-back">
+                            <h5 style="text-align: center; font-weight: 900">{{ $item->nombre }}</h5>
+                            <p style="line-height: 18px">{{ $item->descripcion }}</p>
+                            <p style="text-align: center; text-decoration: underline; ">{{ $item->venta_arquiler }}</p>
+                            <p style="color: rgb(0, 255, 0)">{{ $item->estado }}</p>
+                            @auth
+                                <a href="{{ route('facturar', $item) }}"><button class="bt">{{$item->venta_arquiler}}
+                                        <span>Q.{{ $item->precio }}</span></button></a>
+                            @endauth
+                            @guest
+                                <h5 style="color: red">Para realizar la compra debe iniciar secion o registrarse</h5>
+                            @endguest
+
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endif
         @endforeach
     </div>
 @endsection
 <style>
-  .bt{
-    width: 100%; 
-    height: 30px; 
-    border: none; 
-    border: 1px solid green; 
-    color: green; 
-    background: transparent; 
-    margin: auto;
-    transition: all .4s;
-  }
-  .bt:hover{
-    background: green; 
-    color: white; 
-    box-shadow: 0 0 6px rgba(0, 255, 0, 0.224); 
-  }
-    
+    .bt {
+        width: 100%;
+        height: 30px;
+        border: none;
+        border: 1px solid green;
+        color: green;
+        background: transparent;
+        margin: auto;
+        transition: all .4s;
+    }
+
+    .bt:hover {
+        background: green;
+        color: white;
+        box-shadow: 0 0 6px rgba(0, 255, 0, 0.224);
+    }
+
 
     .productos {
         width: 95%;
         display: flex;
-        justify-content: space-evenly; 
+        justify-content: space-evenly;
         flex-wrap: wrap;
         margin: auto;
-        
+
     }
 
     .flip-card {
@@ -178,7 +183,7 @@
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
     }
- 
+
     .complementor {
         height: 50px;
         width: 50px;

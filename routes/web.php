@@ -64,7 +64,7 @@ Route::view('/perfil/Configure', 'perfil.descripcion')->name('descripcion');
 
 Route::post('/perfil/configure/crear',[DescripcionController::class, 'store'])->name('editar.descripcion');
 
-Route::post('/inicio/facturar/crear', [FacturaController::class, 'store'])->name('crear.factura'); 
+Route::post('/inicio/facturar/crear{rosa}', [FacturaController::class, 'store'])->name('crear.factura', ); 
 Route::get('/inicio/facturar/{item}', [FacturaController::class, 'create'])->name('facturar'); 
 
 

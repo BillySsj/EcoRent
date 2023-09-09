@@ -6,12 +6,11 @@
         @if ($rosa->id == $item)
             @foreach ($descripcion as $des)
                 @if (Auth::user()->id == $des->users_id)
-
-                    <form action="{{ route('crear.factura') }}" method="POST">
+                    <form action="{{ route('crear.factura', $rosa) }}" method="POST">
                         @csrf
                         <div class="grupo">
                             <label for="">Nombre</label>
-                            <input type="text" name="users_id" value="{{Auth::user()->name}}">
+                            <input type="text" name="users_id" value="{{ Auth::user()->name }}">
                             @error('nombre')
                                 <small>{{ $message }}</small>
                             @enderror
@@ -19,54 +18,65 @@
                         </div>
                         <div class="grupo">
                             <label for="">Direccion</label>
-                            <input type="text" name="direccion" value="{{$des->direccion}}">
+                            <input type="text" name="direccion" value="{{ $des->direccion }}">
                         </div>
                         <div class="grupo">
                             <label for="">Telefono</label>
-                            <input type="text" name="telefono" value="{{$des->telefono}}">
+                            <input type="text" name="telefono" value="{{ $des->telefono }}">
                         </div>
                         <div class="grupo">
                             <label for="">Nit</label>
-                            <input type="text" name="nit" value="{{$des->nit}}">
+                            <input type="text" name="nit" value="{{ $des->nit }}">
                         </div>
                         <div class="grupo">
                             <label for="">Correo:</label>
-                            <input type="text" name="correo" value="{{Auth::user()->email}}">
+                            <input type="text" name="correo" value="{{ Auth::user()->email }}">
                         </div>
-                        <div class="grupo">
+
+
+
+
+                        <div class="grupo" style="display: ">
                             <label for="">Producto:</label>
-                            <input type="text" name="nombre_producto" value="{{$rosa->nombre}}">
+                            <h5 style="color: rgb(0, 237, 0)">{{$rosa->nombre}}</h5>
+                            <input style="display: none" type="text" name="nombre_producto" value="{{ $rosa->nombre }}">
                         </div>
-                        <img style="width: 100px; margin:auto" src="/img/{{$rosa->img}}" alt="">
+                        <img style="width: 100px; margin:auto" src="/img/{{ $rosa->img }}" alt="">
                         <div class="grupo">
                             <label for="">Tipo:</label>
-                            <input type="text" name="tipo" value="{{$rosa->tipo}}">
+                            <h5 style="color: rgb(0, 255, 0)">{{$rosa->tipo}}</h5>
+                            <input style="display: none" type="text" name="tipo" value="{{ $rosa->tipo }}">
                         </div>
                         <div class="grupo">
                             <label for="">Precio:</label>
-                            <input type="text" name='precio' value="{{$rosa->precio}}">
+                            <h5 style="color: rgb(0, 255, 0)">{{$rosa->precio}}</h5>
+                            <input style="display: none" type="text" name='precio' value="{{ $rosa->precio }}">
                         </div>
                         <div class="grupo">
                             <label for="">Descripcion:</label>
-                            <input type="text" name='descripcion' value="{{$rosa->descripcion}}">
+                            <h5 style="color: rgb(0, 255, 0)">{{$rosa->descripcion}}</h5>
+                            <input style="display: none" type="text" name='descripcion' value="{{ $rosa->descripcion }}">
                         </div>
                         <div class="grupo">
                             <label for="">Venta-Alquiler</label>
-                            <input type="text" name='venta_alquiler' value="{{$rosa->venta_arquiler}}">
+                            <h5 style="color: rgb(0, 255, 0)">{{$rosa->venta_arquiler}}</h5>
+                            <input style="display: none" id="elp" type="text" name='venta_alquiler' value="{{ $rosa->venta_arquiler }}">
                         </div>
                         <div class="grupo">
                             <label for="">Tipo de pago:</label>
-                            <input type="text" name='tipo_pago' value="Pago contra entrega">
+                            <h5 style="color: rgb(0, 247, 0)">Pago Contra Entrega</h5>
+                            <input style="display: none" type="text" name='tipo_pago' value="Pago contra entrega">
                         </div>
 
-                        <button type="submit">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Subir</button>
-                    </form>
 
+                        <button id="es" type="submit">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          {{$rosa->venta_arquiler}} </button>
+                    </form>
+                  
 
                     <style>
                         .subir {
@@ -114,13 +124,13 @@
 
 
 
-                        @media screen and (max-width:500px){
+                        @media screen and (max-width:500px) {
 
-form{
-    width: 300px;
-}
+                            form {
+                                width: 300px;
+                            }
 
-}
+                        }
 
 
 

@@ -394,24 +394,18 @@
 
                     <div class="perfil-usuario-footer">
                         <ul class="lista-datos">
-                            <li><i class="icono fas fa-map-signs"></i> {{ $var->direccion }}</li>
+                            <li><i class="icono fas fa-map-signs"></i> {{ $var->preferencia_productos }}</li>
                             <li><i class="icono fas fa-phone-alt"></i> {{ $var->telefono }}</li>
-                            <li><i class="icono fas fa-briefcase"></i>{{ $var->nacionalidad }}</li>
-                            <li><i class="icono fas fa-building"></i>{{ $var->fecha_nacimiento }}</li>
+                            <li><i class="icono fas fa-user-check"></i>{{ $var->nacionalidad }}</li>
+                            <li><i class="icono fas fa-user-check"></i>{{ $var->etnia }}</li>
                         </ul>
                         <ul class="lista-datos">
-                            <li><i class="icono fas fa-map-marker-alt"></i>{{ $var->preferencia_productos }}</li>
-                            <li><i class="icono fas fa-calendar-alt"></i>{{ $var->etnia }}</li>
+                            <li><i class="icono fas fa-map-marker-alt"></i>{{ $var->direccion }}</li>
+                            <li><i class="icono fas fa-calendar-alt"></i>{{ $var->fecha_nacimiento }}</li>
                             <li><i class="icono fas fa-user-check"></i>{{ $var->descripcion }}</li>
                         </ul>
                     </div>
-                    <div class="redes-sociales">
-                        <a href="" class="boton-redes facebook fab fa-facebook-f"><i
-                                class="icon-facebook"></i></a>
-                        <a href="" class="boton-redes twitter fab fa-twitter"><i class="icon-twitter"></i></a>
-                        <a href="" class="boton-redes instagram fab fa-instagram"><i
-                                class="icon-instagram"></i></a>
-                    </div>
+                    
                 </div>
             </section>
             <style>
