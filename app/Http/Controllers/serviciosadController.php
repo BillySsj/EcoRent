@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Serviciodar;
 use Illuminate\Http\Request;
-use App\Models\Servicioad; 
+use App\Models\Servicioad;
 
 class serviciosadController extends Controller
 {
@@ -21,17 +22,23 @@ class serviciosadController extends Controller
         'presupuesto' => 'required',
         'comentario'=>'required'
     ]
-    );  
-     
-    $servicio = $request->all(); 
-        Servicioad::create($servicio); 
-    return redirect()->route('servicios'); 
+    );
+
+    $servicio = $request->all();
+        Servicioad::create($servicio);
+    return redirect()->route('servicios');
 }
 
 
+    public function contratarPersonas()
+    {
+        $servicios = Serviciodar::all();
+        return view('servicios.serviciosDisponibles', compact('servicios'));
+
+    }
 
 
 
 
-    
+
 }

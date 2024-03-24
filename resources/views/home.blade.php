@@ -23,8 +23,8 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <span style="color: rgb(12, 255, 12); position:absolute">{{ $item->estado }}</span>
-                            <img src="/img/{{ $item->img }}" alt="">
+                            <span style="margin-bottom: 10px; color: rgb(12, 255, 12); position:absolute">{{ $item->estado }}</span>
+                            <img src="/img/{{ $item->img }}" alt="" style="margin-top: 20px">
                             <h2>{{ $item->nombre }} <span
                                     style="color: green; font-size: 12px;">Q.{{ $item->precio }}</span>
                             </h2>
@@ -32,10 +32,10 @@
                         <div class="flip-card-back">
                             <h5 style="text-align: center; font-weight: 900">{{ $item->nombre }}</h5>
                             <p style="line-height: 18px">{{ $item->descripcion }}</p>
-                            <p style="text-align: center; text-decoration: underline; ">{{ $item->venta_arquiler }}</p>
-                            <p style="color: rgb(0, 255, 0)">{{ $item->estado }}</p>
+                            <p style="text-align: center; text-decoration: underline; ">Venta</p>
+                            <p style="margin-bottom: 5px; color: rgb(0, 255, 0)">{{ $item->estado }}</p>
                             @auth
-                                <a href="{{ route('facturar', $item) }}"><button class="bt">{{$item->venta_arquiler}}
+                                <a href="{{ route('facturar', $item) }}"><button class="bt">Comprar
                                         <span>Q.{{ $item->precio }}</span></button></a>
                             @endauth
                             @guest

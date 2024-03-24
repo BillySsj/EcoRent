@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Serviciodar; 
+use App\Models\Serviciodar;
 
 class ServiciodarController extends Controller
 {
     public function  store(Request $request)
     {
+
         $request->validate([
             'users_id'=> 'required',
             'nit'=>'required',
@@ -18,18 +19,21 @@ class ServiciodarController extends Controller
             'tipo_servicio'=>'required',
             'curriculum'=>'required|image|mimes:jpeg,png,svg,pdf',
             'comentario'=>'required'
-        ]); 
-        $servicio = $request->all(); 
+        ]);
+        $servicio = $request->all();
 
         if($curriculum = $request->file('curriculum')){
-            $rutaGuardarImg = 'img/'; 
-            $imagenProducto = date('YmdHis'). ".". $curriculum->getClientOriginalExtension(); 
-            $curriculum->move($rutaGuardarImg, $imagenProducto); 
-            $servicio['img']= "$imagenProducto"; 
+            $rutaGuardarImg = 'img/';
+            $imagenProducto = date('YmdHis'). ".". $curriculum->getClientOriginalExtension();
+            $curriculum->move($rutaGuardarImg, $imagenProducto);
+            $servicio['curriculum']= "$imagenProducto";
         }
 
-        Serviciodar::create($servicio); 
-        return redirect()->route('servicios'); 
+
+        Serviciodar::create($servicio);
+     return view('servicios.creado');
 
     }
+
+
 }

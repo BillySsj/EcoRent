@@ -59,7 +59,7 @@
                         </div>
                         <div class="grupo">
                             <label for="">Venta-Alquiler</label>
-                            <h5 style="color: rgb(0, 255, 0)">{{$rosa->venta_arquiler}}</h5>
+                            <h5 style="color: rgb(0, 255, 0)">Comprar</h5>
                             <input style="display: none" id="elp" type="text" name='venta_alquiler' value="{{ $rosa->venta_arquiler }}">
                         </div>
                         <div class="grupo">
@@ -74,9 +74,9 @@
                             <span></span>
                             <span></span>
                             <span></span>
-                          {{$rosa->venta_arquiler}} </button>
+                          Comprar </button>
                     </form>
-                  
+
 
                     <style>
                         .subir {

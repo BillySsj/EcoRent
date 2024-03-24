@@ -26,7 +26,7 @@
                 <div style="justify-content: space-evenly; display:flex; width: 100%" class="opciones">
                      <a class="navbar navbar-expand-md navbar-light; ver"
                         style="color: black; text-decoration: none; " href="{{route('inicio')}}">
-                        <img class="rosa" src="/img/logo.jpg" alt="">
+                        <img class="rosa" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRopsNDWa1J0vLjSOvYQy7vumqomqf4M-BVDQXuJFwpN83VsQg0uij3I8HpOx160HQsquU&usqp=CAU" alt="">
                         Inicio
                     </a>
                     <a class="navbar navbar-expand-md navbar-light; ver"
@@ -67,20 +67,20 @@
                             }
                         }
                     </style>
-                 
+
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-    
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-    
+
                     </ul>
-    
+
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
@@ -90,7 +90,7 @@
                                     <a style="color: white" class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-    
+
                             @if (Route::has('register'))
                                 <li style="background: rgb(6, 141, 6); border-radius: 10px; margin-left: 10px " class="nav-item">
                                     <a style="color: white" class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -102,22 +102,22 @@
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
-    
+
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }} 
+                                        {{ __('Logout') }}
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </div>
                             </li>
-                    
+
                         @endguest
-              
+
                     </ul>
                 </div>
             </div>

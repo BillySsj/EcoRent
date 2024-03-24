@@ -3,7 +3,7 @@
 @section('content')
     <header style="margin-top: -30px">
         <div class="imagen-portada">
-            <img src="/img/portada30.jpg" alt="">
+            <img src="https://images.ctfassets.net/txbhe1wabmyx/1dcXeAwolNAngGDuglWeWi/af1087111417148113c2d7fb477d5fda/photo-1477959858617-67f85cf4f1df.jpg" alt="">
             <div class="textos-imagen">
                 <h1>La mejor empresa de alquiler y venta de Guatemala</h1>
                 <h2>Nuestro trabajo es hacerte ganar y ahorrar dinero por tus productos</h2>
@@ -66,13 +66,13 @@
             <div class="cont-ubicacion">
                 <div class="grupos-ubicacion">
                     <div class="img-ubicacion ubi">
-                        <img src="/img/Guastatoya_carretera.jpg" alt="">
+                        <img src="https://aprende.guatemala.com/wp-content/uploads/2016/09/El-J%C3%ADcaro-municipio-de-El-Progreso.jpg" alt="">
                     </div>
                     <div class="titulo-ubicacion ubi">
                         <div class="letras">
                             <img src="imagenes/logoje.jpg" alt="">
                             <h1>¿Como ubicarnos?</h1>
-                            <h6>¡Estamos En GUASTATOYA!</h6>
+                            <h6>¡Estamos En el Jicaro!</h6>
                         </div>
 
                     </div>
@@ -537,7 +537,7 @@
                         background: black;
                         box-shadow: 0 0 6px 0 rgb(0, 0, .6);
                         line-height: 20px;
-                        margin-left: -10%; 
+                        margin-left: -10%;
                         margin-top: 10px;
                     }
 
@@ -553,7 +553,7 @@
                     .cont-eco {
                         background-color: rgba(245, 245, 245, 1);
                         margin-top: -60px;
-                
+
                     }
 
                     .individual-eco p {
@@ -612,7 +612,7 @@
                     }
                     .ubicacion{
                         margin-top: 60px;
-                 
+
                     }
                     .ubicacion {
                         width: 90%;
@@ -634,7 +634,7 @@
                     .ubi {
                         width: 34%;
                         height: 100%;
-                       
+
 
                     }
 
@@ -681,8 +681,8 @@
                    .comentarios{
                     display: none;
                    }
-                  
-                   
+
+
 
                     }
                 </style>
